@@ -10,8 +10,7 @@ const VeiculoSchema =  new mongoose.Schema({
     anoFabri : String,
     anoModelo : String,
     placa : String,
-
-
+    thumb : String,
 });
 
 module.exports = mongoose.model('Veiculo', VeiculoSchema);

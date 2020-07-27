@@ -27,12 +27,13 @@ module.exports = {
     const anoFabri = req.body.anoFabri;
     const anoModelo = req.body.anoModelo;
     const placa = req.body.placa;
+    const thumb = req.file.filename;
     //busca se ja tem algum usuaro com esse email
     let veiculo = await Veiculo.findOne({cor});
     //compara se houve resultado
     if(!veiculo){
       //se nao houver resultado grava o novo usuario
-      veiculo = await Veiculo.create({nome,motor,portas,cor,combustivel,anoFabri,anoModelo,placa});
+      veiculo = await Veiculo.create({nome,motor,portas,cor,combustivel,anoFabri,anoModelo,placa,thumb});
     }
     return res.json(veiculo);
   },
